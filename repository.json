@@ -1,0 +1,19 @@
+
+{
+    "repository_version": 1.0,
+    "name": "Unchained",
+    "description": "Unchained main repository",
+    "author": "LivingWithHippos",
+    "plugins": [
+        {
+            "id": "etree",
+            "versions": [
+                {
+                    "plugin": 2.0,
+                    "engine": 2.0,
+                    "link": "https://github.com/muffdiver23/unchained-plugins/raw/main/repository/plugins/etree/etree_v2.0.unchained"
+                }
+            ]
+        }
+    ]
+}
