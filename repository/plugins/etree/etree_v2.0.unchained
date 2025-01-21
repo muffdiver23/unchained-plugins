@@ -1,0 +1,52 @@
+
+{
+  "engine_version": 1.2,
+  "version": 1.0,
+  "url": "https://www.happyfappy.org",
+  "name": "HappyFappy",
+  "description": "Search plugin for HappyFappy.org",
+  "author": "Your Name",
+  "supported_categories": {
+    "all": "None"
+    // Add more categories if applicable
+  },
+  "search": {
+    "no_category": "${url}/torrents.php?order_by=time&order_way=desc&searchtext=${query}&action=advanced&title=&sizeall=&sizetype=gb&sizerange=0.01&filelist=&taglist=&autocomplete_toggle=1&page=${page}",
+    "page_start": 1
+  },
+  "download": {
+    "table_direct": {
+      "class": "torrent-list", // Assuming the table has this class; adjust if different
+      "columns": {
+        "name_column": 0,
+        "seeders_column": 1,
+        "leechers_column": 2,
+        "size_column": 3,
+        "torrent_column": 4
+      }
+    },
+    "regexes": {
+      "name": {
+        "regex": "<a href="[^"]+" class="torrent-name">([^<]+)</a>",
+        "group": 1
+      },
+      "seeders": {
+        "regex": "<td class="seeders">(\d+)</td>",
+        "group": 1
+      },
+      "leechers": {
+        "regex": "<td class="leechers">(\d+)</td>",
+        "group": 1
+      },
+      "size": {
+        "regex": "<td class="size">([^<]+)</td>",
+        "group": 1
+      },
+      "torrent": {
+        "regex": "<a href="(https://www.happyfappy.org/download\.php\?id=\d+)" class="download-button">",
+        "group": 1,
+        "slug_type": "complete"
+      }
+    }
+  }
+}
